@@ -30,6 +30,11 @@
 
   {{ partial "theme-color.html" . }}
 
+  {{ if .Page.Params.useGallery}}
+    <link rel="stylesheet async" as="style" href="{{ (resources.Get "css/lightbox.min.css").Permalink }}">
+    <link rel="stylesheet async" as="style" href="{{ (resources.Get "css/gallery-layout.css").Permalink }}">
+  {{ end }}
+
   {{ range $.Site.Params.customCss -}}
   <link type="text/css" rel="stylesheet" href="{{ . | relURL }}">
   {{- end}}
@@ -69,6 +74,10 @@
 
   <script src="{{ `js/jquery.min.js` | relURL }}"></script>
   <script src="{{ `js/soho.js` | relURL }}"></script>
+
+  {{ if .Page.Params.useGallery}}
+    <script src="{{ (resources.Get "js/lightbox-plus-jquery.min.js").Permalink }}"></script>
+  {{ end }}
 
   {{ range $.Site.Params.customJs -}}
   <script src="{{ . | relURL }}"></script>

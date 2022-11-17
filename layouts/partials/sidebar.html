@@ -37,6 +37,8 @@
       </ul>
     </nav>
 
+    {{ partial "lang.html" .}}
+
     <section class="social-icons">
       {{ range $item := .Site.Params.socialIcons }}
       <a href="{{ $item.url }}" rel="me" title="{{ $item.title }}" target="_blank">

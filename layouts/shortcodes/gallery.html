@@ -1,0 +1,11 @@
+<div class="gallery">
+{{ $dir := print (.Get 0) "/*"}}
+{{ $titles := .Params }}
+{{ with .Page.Resources.Match $dir }}
+{{ range $index, $item := . }}
+    {{ $full := $item.Fit "1980x1080"}}
+    {{ $resized := $item.Fill "135x120 q80" }}
+    <a class="gallery-item" href="{{ $full.Permalink }}" data-lightbox="x" data-title="{{ index $titles (add $index 1) }}"><img src="{{ $resized.Permalink }}"/></a>
+    {{ end }}
+{{ end }}
+</div>
