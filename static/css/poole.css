@@ -150,6 +150,7 @@ code,
 pre,
 .highlight {
   font-family: Menlo, Monaco, "Courier New", monospace;
+  overflow-x: scroll;
 }
 code {
   color: #e83e8c;
@@ -157,9 +158,10 @@ code {
 }
 pre {
   display: block;
-  overflow: auto;
+  /*overflow: auto;*/
+  /*overflow-x: scroll;*/
   margin: 0;
-  padding: 0;
+  padding: 10px;
   line-height: 1.4;
   white-space: pre;
   background-color: #fff;
